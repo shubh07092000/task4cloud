@@ -124,7 +124,7 @@ resource "aws_instance" "mysql"{
 	sudo yum install docker -y
         sudo service docker start
         sudo docker pull mysql:5.7
-	sudo docker run -dit -e MYSQL_ROOT_PASSWORD=ash -e MYSQL_DATABASE=data -e MYSQL_USER=shubh  -e MYSQL_PASSWORD=ash -p 8080:3306 --name dbos mysql:5.7
+	sudo docker run -dit -e MYSQL_ROOT_PASSWORD=***** -e MYSQL_DATABASE=data -e MYSQL_USER=shubh  -e MYSQL_PASSWORD=***** -p 8080:3306 --name dbos mysql:5.7
   EOF
   
   tags = {
@@ -190,7 +190,7 @@ resource "aws_instance" "wordpress"{
       "sudo yum install docker -y",
       "sudo service docker start",
       "sudo docker pull wordpress:5.1.1-php7.3-apache ",
-      "sudo docker run -dit -e WORDPRESS_DB_HOST=${aws_instance.mysql.private_ip}:8080 -e WORDPRESS_DB_USER=shubh -e WORDPRESS_DB_PASSWORD=ash -e WORDPRESS_DB_NAME=data -p 8000:80 --name mywp wordpress:5.1.1-php7.3-apache"
+      "sudo docker run -dit -e WORDPRESS_DB_HOST=${aws_instance.mysql.private_ip}:8080 -e WORDPRESS_DB_USER=shubh -e WORDPRESS_DB_PASSWORD=***** -e WORDPRESS_DB_NAME=data -p 8000:80 --name mywp wordpress:5.1.1-php7.3-apache"
     ]
   }
   tags = {
